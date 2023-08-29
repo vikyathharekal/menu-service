@@ -1,35 +1,32 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: menu-service
-    
   tags:
     - java
+    - food-ordering
+  name: menu-service
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+#     harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/home/orgs/default/projects/vigneshproject/details
+#     circleci.com/project-slug: github/vigneswara-propelo/python-pipeline-samples
+    gitlab.com/project-id: '43877214'
+    jira/project-key: IDP
+    jenkins.io/github-folder: 'CDS-68313'
+    firehydrant.com/service-name: 'python-pipeline-samples'
+    backstage.io/kubernetes-label-selector: 'app=idp-ui'
+    backstage.io/kubernetes-namespace: '63feee14cbf66e3c798c4bdc'
+    github.com/project-slug: vigneswara-propelo/python-pipeline-samples
+    harness.io/pipelines: |
+      Build: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio/?storeType=INLINE
+      Lint: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Lint/pipeline-studio
+      TypeCheck: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Typecheck/pipeline-studio
+    grafana/dashboard-selector: "(tags @> 'prometheus' || tags @> 'blackbox')"
 
-  links:
-    - url: https://example.com/user
-      title: Examples Users
-      icon: user
-    - url: https://example.com/group
-      title: Example Group
-      icon: group
-    - url: https://example.com/cloud
-      title: Link with Cloud Icon
-      icon: cloud
-    - url: https://example.com/dashboard
-      title: Dashboard
-      icon: dashboard
-    - url: https://example.com/help
-      title: Support
-      icon: help
-    - url: https://example.com/web
-      title: Website
-      icon: web
-    - url: https://example.com/alert
-      title: Alerts
-      icon: alert
+#     snyk.io/org-name: vigneswara-propelo
+#     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227
 spec:
   type: service
-  lifecycle: prod
-  owner: user-team
-  system: delivery
+  lifecycle: production
+  owner: harness_account_all_users
+  providesApis: 
+    - idp-Service-api
