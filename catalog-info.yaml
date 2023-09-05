@@ -4,7 +4,7 @@ metadata:
   tags:
     - java
     - food-ordering
-    - 1
+    - one
   name: menu-service
   annotations:
     backstage.io/techdocs-ref: dir:.
