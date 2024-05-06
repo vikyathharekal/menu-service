@@ -25,7 +25,7 @@ metadata:
 spec:
   type: service
   system: delivery
-  lifecycle: production
+  lifecycle: Production
   owner: harness_account_all_users
   providesApis: 
     - idp-Service-api
